@@ -14,7 +14,18 @@ The code is NOT the same. There are key differences:
 
 ## Get Started
 
-To begin, install REACTColor. Create a folder on your computer and call it tempfiles. This is where REACT will store each experiment before emailing. Then, to start REACT enter the following code in your terminal: 
+To begin, install REACTColor by following the steps below. 
+
+1. Make sure you have python3 installed on your computer by running this code:
+   `python3`
+   if you see an undefined response, then that means you have not installed python.
+2. Download the .whl file from this repository.
+3. Then run this code:
+   `pip install /directory/to/the/wheel/file`
+
+
+
+Create a folder on your computer and call it tempfiles. This is where REACT will store each experiment before emailing. Then, to start REACT enter the following code in your terminal: 
 
 `$ python -m REACTColor email@example.com password webcamchannel`
 
