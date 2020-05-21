@@ -19,8 +19,9 @@ To begin, install REACTColor by following the steps below.
 1. Make sure you have python3 installed on your computer by running this code:
    `python3`
    if you see an undefined response, then that means you have not installed python.
-2. Download the .whl file from this repository.
-3. Then run this code:
+2. Create a tempfiles directory, and keep note of the path to the directory
+3. Download the .whl file from this repository.
+4. Then run this code:
    `pip install /directory/to/the/wheel/file`
 
 
