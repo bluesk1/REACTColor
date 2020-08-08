@@ -30,7 +30,7 @@ Create a folder on your computer and call it tempfiles. This is where REACT will
 
 `$ python -m REACTColor email@example.com password webcamchannel`
 
-Of course, replace email@example.com with yours, and enter password of that email. If you would not like to use email, type 0 for both email and password. It will produce an error, but all files from the experiment will be stored in the tempfiles directory.
+Of course, replace email@example.com with yours, and enter the password of that email. If you would not like to use email, type 0 for both email and password. It will produce an error, but all files from the experiment will be stored in the tempfiles directory.
 
 The webcam channel is dependent on your computer, it is usually 0, or 1. Please try and check which one is correct, by looking at source images. 
 
