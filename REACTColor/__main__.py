@@ -1,7 +1,7 @@
 import csv
 import time
 import pandas as pd
-import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 from PIL import Image
 from cv2 import *
 import PySimpleGUIWeb as sg
@@ -73,43 +73,51 @@ def takePicture(i, pl, react_id, n, cap, writer):
 def postProcess(pl, react_id, email_address, l, n):
     df = pd.read_csv("final.csv")
 
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=df['time'], y=df['r'], name="Red", marker_color='rgba(240, 52, 52, 1)'))
-    fig.add_trace(go.Scatter(x=df['time'], y=df['g'], name="Green", marker_color='rgba(30, 130, 76, 1)'))
-    fig.add_trace(go.Scatter(x=df['time'], y=df['b'], name="Blue", marker_color='rgba(30, 139, 195, 1)'))
-    fig.update_layout(title="Time v. Color Concentration", xaxis_title="Time", yaxis_title="Color Concentration")
-    fig.write_image("final_graph.png")
-    fig.show()
+    plt.title("Time v. Color Concentration")
+    plt.plot(df['time'], df['r'], label="Red", color='red')
+    plt.plot(df['time'], df['g'], label="Green", color='green')
+    plt.plot(df['time'], df['b'], label="Blue", color='blue')
+    plt.xlabel("Time")
+    plt.ylabel("Color Concentration")
+    plt.legend()
+    plt.savefig("final_graph.png",bbox_inches="tight",dpi=300)
 
     os.chdir(pl)
 
     shutil.make_archive("Experiment_"+react_id, 'zip', react_id)
-    sendEmail(email_address, react_id, l, n)
-
+    try:
+        sendEmail(email_address, react_id, l, n)
+    except:
+        print("Email option did not work. Don't worry your data is saved in the tempfiles folder")
+    
 def sendEmail(email_address, react_id, l, n):
     fromAddress = sys.argv[0]
     toAddress = email_address
-    subject = "Your requested results from REACT"
-    body = "Please see attached. Thanks for using REACT. The reaction conditions were as follows.\nTime: " + str(l) + "\n" + "Frequency: " + str(n) + "\n" + "Process complete." 
-    msg = MIMEMultipart()
-    msg['From'] = fromAddress
-    msg['To'] = toAddress
-    msg['Subject'] = subject
-    msg.attach(MIMEText(body, 'plain')) 
-    fileName = "Experiment_"+react_id+".zip"
-    attachment = open(fileName, "rb")
-    mimeapp = MIMEBase('application', 'octet-stream')
-    mimeapp.set_payload((attachment).read())
-    encoders.encode_base64(mimeapp)
-    mimeapp.add_header('Content-Disposition', "attachment; fileName= %s" % fileName)
-    msg.attach(mimeapp)
-    mailApp = smptlib.SMTP('smtp.gmail.com', 587)
-    mailApp.starttls()
-    mailApp.login(sys.argv[1], sys.argv[2])
-    mainBody = msg.as_string()
-    mailApp.sendmail(fromAddress, toAddress, mainBody)
-    mailApp.quit()
-
+    if fromAddress == "0":
+        print("Email Option not selected. Data stored in tempfiles")
+    elif "gmail" in fromAddress:
+        subject = "Your requested results from REACT"
+        body = "Please see attached. Thanks for using REACT. The reaction conditions were as follows.\nTime: " + str(l) + "\n" + "Frequency: " + str(n) + "\n" + "Process complete." 
+        msg = MIMEMultipart()
+        msg['From'] = fromAddress
+        msg['To'] = toAddress
+        msg['Subject'] = subject
+        msg.attach(MIMEText(body, 'plain')) 
+        fileName = "Experiment_"+react_id+".zip"
+        attachment = open(fileName, "rb")
+        mimeapp = MIMEBase('application', 'octet-stream')
+        mimeapp.set_payload((attachment).read())
+        encoders.encode_base64(mimeapp)
+        mimeapp.add_header('Content-Disposition', "attachment; fileName= %s" % fileName)
+        msg.attach(mimeapp)
+        mailApp = smptlib.SMTP('smtp.gmail.com', 587)
+        mailApp.starttls()
+        mailApp.login(sys.argv[1], sys.argv[2])
+        mainBody = msg.as_string()
+        mailApp.sendmail(fromAddress, toAddress, mainBody)
+        mailApp.quit()
+    else:
+        print("Gmail is the only email platform supported. Data stored in tempfiles")
 def main():
     cap = VideoCapture(int(sys.argv[3]))
 
@@ -133,6 +141,7 @@ def main():
     cap.release()
 
     postProcess(pl, react_id, email_address, l, n)
+    plt.show()
 
 if __name__ == "__main__":
     main()
