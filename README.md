@@ -14,7 +14,7 @@ The code is NOT the same. There are key differences:
 
 ## OPTION 1) Get Started (install using one-click option; "REACTInstaller")
 
-1. Copy the path to the REACTInstaller (download from releases)
+1. Copy the path to the REACTInstaller (download from latest release)
 2. Type `chmod +x path\to\REACTInstaller`
 3. Tap twice on the REACTInstaller, and you can see REACT actively install (steps 1 and 2 do not have to be repeated ever again)
 
@@ -26,12 +26,12 @@ To begin, install REACTColor by following the steps below.
    `python3`
    if you see an undefined response, then that means you have not installed python.
 2. Create a tempfiles directory, and keep note of the path to the directory
-3. Download the .whl file from the releases (v.0.0.1).
+3. Download the .whl file from the latest release.
 4. Then run this code:
    `pip install /directory/to/the/wheel/file`
 ## OPTION 1) Usage (using REACTLauncher)
 
-1. Copy the path to the REACTLauncher (download from releases)
+1. Copy the path to the REACTLauncher (download from latest release)
 2. Type `chmod +x path\to\REACTLauncher`
 3. Tap twice on the REACTLauncher, and you can see REACT actively install (steps 1 and 2 do not have to be repeated ever again)
 
