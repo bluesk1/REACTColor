@@ -12,10 +12,13 @@ The code is NOT the same. There are key differences:
 -The final spreadsheet (RGB values) are stored as a CSV
 -ALL images, graphs, and CSV are sent as an email (by your email, see below)
 
-## Get Started (install using one-click option; "REACTInstaller")
+## OPTION 1) Get Started (install using one-click option; "REACTInstaller")
 
+1. Copy the path to the REACTInstaller (download from releases)
+2. Type `chmod +x path\to\REACTInstaller`
+3. Tap twice on the REACTInstaller, and you can see REACT actively install (steps 1 and 2 do not have to be repeated ever again)
 
-## Get Started (install using pip)
+## OPTION 2) Get Started (install using pip)
 
 To begin, install REACTColor by following the steps below. 
 
@@ -23,12 +26,16 @@ To begin, install REACTColor by following the steps below.
    `python3`
    if you see an undefined response, then that means you have not installed python.
 2. Create a tempfiles directory, and keep note of the path to the directory
-3. Download the .whl file from the "dist" folder in the repository.
+3. Download the .whl file from the releases (v.0.0.1).
 4. Then run this code:
    `pip install /directory/to/the/wheel/file`
-## Usage (using REACTLauncher)
+## OPTION 1) Usage (using REACTLauncher)
 
-## Usage (using commandline)
+1. Copy the path to the REACTLauncher (download from releases)
+2. Type `chmod +x path\to\REACTLauncher`
+3. Tap twice on the REACTLauncher, and you can see REACT actively install (steps 1 and 2 do not have to be repeated ever again)
+
+## OPTION 2) Usage (using commandline)
 
 Create a folder on your computer and call it tempfiles. This is where REACT will store each experiment before emailing. Then, to start REACT enter the following code in your terminal: 
 
