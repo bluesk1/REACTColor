@@ -20,7 +20,7 @@ setup(
    ], 
    packages=["REACTColor"], 
    includepackagedata=True, 
-   installrequires=["pandas","plotly", "Pillow", "opencv-python", "PySimpleGUIWeb","progress"], 
+   installrequires=["pandas","matplotlib", "Pillow", "opencv-python", "PySimpleGUIWeb","progress"], 
    entrypoints={ 
        "console_scripts":[ 
            "REACTColor=REACTColor.__main__:main", 
