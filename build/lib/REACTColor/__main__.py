@@ -1,4 +1,6 @@
 import csv
+import matplotlib as mpl
+mpl.use('TkAgg')
 import time
 import pandas as pd
 import matplotlib.pyplot as plt
