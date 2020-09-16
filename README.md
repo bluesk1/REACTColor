@@ -1,3 +1,6 @@
+For the latest and most accurate documentation please visit: https://bluesk1.github.io/REACTColor/
+The README files are still updated with every major version release.
+***
 # ReactColor
 Thanks for using ReactColor. You are using version 0.0.1. React color was based on:
 
