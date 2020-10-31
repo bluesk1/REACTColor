@@ -1,0 +1,6 @@
+pandas
+matplotlib
+Pillow
+opencv-python
+PySimpleGUIWeb
+progress

@@ -6,4 +6,5 @@ REACTColor.egg-info/PKG-INFO
 REACTColor.egg-info/SOURCES.txt
 REACTColor.egg-info/dependency_links.txt
 REACTColor.egg-info/entry_points.txt
+REACTColor.egg-info/requires.txt
 REACTColor.egg-info/top_level.txt
