@@ -11,6 +11,8 @@ setup(
    descp="REACTColor can be used to monitor colorimetric reactions.", 
    long_descp=README,
    long_descp_content="text/markdown", 
+   long_description=README,
+   long_description_content_type='text/markdown',
    author="Saathvik Kannan", 
    license="MIT", 
    classifiers=[ 
