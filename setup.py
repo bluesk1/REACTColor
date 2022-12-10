@@ -7,7 +7,7 @@ README = (HERE/"README.md").read_text()
 
 setup(
    name="REACTColor", 
-   version="0.0.1", 
+   version="0.0.2", 
    descp="REACTColor can be used to monitor colorimetric reactions.", 
    long_descp=README,
    long_descp_content="text/markdown", 
