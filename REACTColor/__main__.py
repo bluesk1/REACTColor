@@ -6,6 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
 from cv2 import *
+import cv2
 import PySimpleGUIWeb as sg
 import shutil
 import smtplib as smptlib
@@ -121,7 +122,7 @@ def sendEmail(email_address, react_id, l, n):
     else:
         print("Gmail is the only email platform supported. Data stored in tempfiles")
 def main():
-    cap = VideoCapture(int(sys.argv[3]))
+    cap = cv2.VideoCapture(int(sys.argv[3]))
 
     l, n, pl, react_id, email_address = graphicalInterface()
 
